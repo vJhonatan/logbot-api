@@ -1,0 +1,6 @@
+@logbot_HostAddress = http://localhost:5028
+
+GET {{logbot_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
