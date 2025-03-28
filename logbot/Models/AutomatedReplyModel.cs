@@ -1,9 +1,11 @@
 ﻿using logbot.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace logbot.Models
 {
-    public class AutomatedReply
+    public class AutomatedReplyModel
     {
+        [Key]
         public Guid Id { get; set; }
         public string TriggerMessage { get; set; }
         public string ReplyMessage { get; set; }

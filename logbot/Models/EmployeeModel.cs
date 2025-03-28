@@ -1,11 +1,13 @@
 ﻿using logbot.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace logbot.Models
 {
-    public class Employee
+    public class EmployeeModel
     {
+        [Key]
         public Guid Id { get; set; } 
-        public Company CompanyId { get; set; }
+        public CompanyModel CompanyId { get; set; }
         public string Name { get; set; }
         public string Email { get; set; } 
         public string Phone { get; set; } 

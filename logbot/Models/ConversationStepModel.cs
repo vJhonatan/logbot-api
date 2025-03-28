@@ -1,11 +1,13 @@
 ﻿using logbot.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace logbot.Models
 {
-    public class ConversationStep
+    public class ConversationStepModel
     {
+        [Key]
         public Guid Id { get; set; }
-        public Conversation ConversationId { get; set; }
+        public ConversationModel ConversationId { get; set; }
         public int StepOrder { get; set; }
         public string Message { get; set; }
         public ResponseTypeEnum ExpectedResponseType { get; set; }
