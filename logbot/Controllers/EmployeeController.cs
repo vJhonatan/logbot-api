@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace logbot.Controllers
 {
     [Controller]
-    [Route("api/employees")]
+    [Route("api/[controller]")]
     public class EmployeeController : ControllerBase
     {   
         private readonly EmployeeService _employeeService;
