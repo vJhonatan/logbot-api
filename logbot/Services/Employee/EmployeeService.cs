@@ -14,7 +14,15 @@ namespace logbot.Services.EmployeeService
 
         async Task<ServiceResponse<EmployeeModel>> IEmployeeInterface.AddEmployee(EmployeeModel employee)
         {
-            throw new NotImplementedException();
+            ServiceResponse<List<EmployeeModel>> response = new ServiceResponse<List<EmployeeModel>>();
+
+            try
+            {
+
+            }
+            catch (Exception ex) 
+            { 
+            }
         }
 
         async Task<ServiceResponse<EmployeeModel>> IEmployeeInterface.DeleteEmployeeById(Guid id)

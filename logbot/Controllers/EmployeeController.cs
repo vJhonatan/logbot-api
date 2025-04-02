@@ -1,5 +1,5 @@
 ﻿using logbot.Models;
-using logbot.Services;
+using logbot.Services.EmployeeService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace logbot.Controllers
@@ -7,27 +7,21 @@ namespace logbot.Controllers
     [Controller]
     [Route("api/[controller]")]
     public class EmployeeController : ControllerBase
-    {   
-        private readonly EmployeeService _employeeService;
-        
-        public EmployeeController(EmployeeService employeeService)
-        {
-            _employeeService = employeeService;
-        }
+    {
+        private readonly IEmployeeInterface employeeInterface;
 
-        [HttpPost]
-        public ActionResult newEmployee([FromBody] EmployeeModel employee)
+        public EmployeeController(IEmployeeInterface employeeInterface)
         {
-            _employeeService.newEmployee(employee);
-            return Ok(new { message = "Funcionário adicionado!"});
+            this.employeeInterface = employeeInterface;
         }
 
         [HttpGet]
-        public ActionResult GetAll()
+        public async Task<ActionResult<ServiceResponse<List<EmployeeModel>>>> GetEmployees()
         {
-            var employees = _employeeService.GetAll();
-            return Ok(employees);
+            return Ok(await employeeInterface.GetEmployees());
         }
 
+        //[HttpPost]
+        //public async 
     }
 }

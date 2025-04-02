@@ -1,5 +1,5 @@
 using logbot.Database;
-using logbot.Services;
+using logbot.Services.EmployeeService;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,9 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-builder.Services.AddScoped<EmployeeService>();
-
+builder.Services.AddScoped<IEmployeeInterface, EmployeeService>();
 
 var app = builder.Build();
 
