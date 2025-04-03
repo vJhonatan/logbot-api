@@ -21,7 +21,10 @@ namespace logbot.Controllers
             return Ok(await employeeInterface.GetEmployees());
         }
 
-        //[HttpPost]
-        //public async 
+        [HttpPost]
+        public async Task<ActionResult<ServiceResponse<EmployeeModel>>> CreateEmployee([FromBody] EmployeeModel employee)
+        {
+            return Ok(await employeeInterface.CreateEmployee(employee));
+        }
     }
 }

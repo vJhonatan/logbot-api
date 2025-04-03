@@ -6,8 +6,10 @@ namespace logbot.Models
     {
         [Key]
         public Guid Id { get; set; }
-        public OrderModel OrderId { get; set; }
-        public ProductModel ProductId { get; set; }
+        public Guid OrderId { get; set; }
+        public OrderModel Order { get; set; }
+        public Guid ProductId { get; set; }
+        public ProductModel Product { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
     }

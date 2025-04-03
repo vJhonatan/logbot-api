@@ -9,6 +9,7 @@ namespace logbot.Models
         [Key]
         public Guid Id { get; set; }
         public Guid CompanyId { get; set; }
+        public CompanyModel Company { get; set; }
         public string CustomerName { get; set; }
         public string CustomerPhone { get; set; }
         public OrderEnum OrderStatus { get; set; }
