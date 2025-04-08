@@ -1,5 +1,6 @@
 ﻿using logbot.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace logbot.Models
 {
@@ -8,7 +9,8 @@ namespace logbot.Models
         [Key]
         public Guid Id { get; set; }
         public Guid ConversationId { get; set; }
-        public ConversationModel Conversation { get; set; }
+        [JsonIgnore]
+        public ConversationModel? Conversation { get; set; }
         public int StepOrder { get; set; }
         public string Message { get; set; }
         public ResponseTypeEnum ExpectedResponseType { get; set; }

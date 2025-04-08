@@ -4,11 +4,10 @@ namespace logbot.Services.EmployeeService
 {
     public interface IEmployeeInterface
     {
-        Task<ServiceResponse<List<EmployeeModel>>> GetEmployees();
-        Task<ServiceResponse<EmployeeModel>> CreateEmployee(EmployeeModel employee);
-        Task<ServiceResponse<EmployeeModel>> GetEmployeebyId(Guid id);
-        Task<ServiceResponse<EmployeeModel>> UpdateEmployee(EmployeeModel newEmployee);
-        Task<ServiceResponse<EmployeeModel>> DeleteEmployeeById(Guid id);
-        Task<ServiceResponse<EmployeeModel>> DesactivateEmployee(Guid id);
+        public Task<ServiceResponse<List<EmployeeModel>>> GetEmployees();
+        public Task<ServiceResponse<EmployeeModel>> CreateEmployee(EmployeeModel employee);
+        public Task<ServiceResponse<EmployeeModel>> GetEmployeebyId(Guid id);
+        public Task<ServiceResponse<EmployeeModel>> UpdateEmployee(Guid id,EmployeeModel newEmployee);
+        public Task<ServiceResponse<EmployeeModel>> DeleteEmployeeById(Guid id);
     }
 }
